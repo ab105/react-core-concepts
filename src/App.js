@@ -17,13 +17,37 @@ function App() {
     backgroundColor: 'blue',
     color: 'white'
   };
+  
+  const nayoks = ['Rubel', 'Bapparaz', 'Koober', 'Bappi', 'Shuvo', 'Chan mia', 'Omar Sani'];
 
+
+  // array of object
+  const cinemas = [
+    {nayok: 'koober', nayika: 'kopila'},
+    {nayok: 'Rubel', nayika: 'Moushumi'},
+    {nayok: 'Razzak', nayika: 'Shabana'},
+    {nayok: 'Jashim', nayika: 'Kobori'},
+  ]
 
   return (
     <div className="App">
-      <Friend phone="0165654526" address="noakali"></Friend>
-      <Friend phone="017533322" address="Jessore"></Friend>
-      <Friend phone="01324567654" address="Rangpur"></Friend>
+      <ul>
+        {/* <li>{nayoks[0]}</li>
+        <li>{nayoks[1]}</li>
+        <li>{nayoks[2]}</li> */}
+        {
+          // nayoks.map(nayok => console.log(nayok))
+          nayoks.map(nayok => <li>{nayok}</li>)
+          //aita holo dynamic korar suto kato ekta way
+        }
+      </ul>
+      {/* <Cinema nayok="J Bond" nayika="cat women"></Cinema> */}
+      
+      {
+        // cinemas.map(cinema => console.log(cinema))
+
+        cinemas.map(cinema => <Cinema nayok={cinema.nayok} nayika={cinema.nayika}></Cinema>)
+      }
 
       
     </div>
@@ -35,6 +59,13 @@ function App() {
       <p id="title">Title</p>
       <Person name="Rubel" nayika="moushumi"></Person>
       <Person name="Bapparaz" nayika="Cheka"></Person>      <Person name="kuber"  nayika="kopila"></Person>
+*/
+/*module 45-4
+      <Friend phone="0165654526" address="noakali"></Friend>
+      <Friend phone="017533322" address="Jessore"></Friend>
+      <Friend phone="01324567654" address="Rangpur"></Friend>
+
+
 */
 
 //nicher function er Person ta holo nijer html tag  
@@ -59,6 +90,15 @@ function Friend(props){
     <div className="person">
       <h3 >Phone: {props.phone}</h3>
       <h5>Address: {props.address}</h5>
+    </div>
+  );
+}
+
+function Cinema(props) {
+  return(
+    <div className="person">
+      <h2>Nayok: {props.nayok}</h2>
+      <h4>Nayika: {props.nayika}</h4>
     </div>
   );
 }
@@ -95,5 +135,11 @@ function Friend(props){
         </a>
       </header>
  */
+
+
+/* 
+<Person name={nayoks[0]} nayika="moushumi"></Person>
+      <Person name={nayoks[1]} nayika="Cheka"></Person>      <Person name={nayoks[2]}  nayika="kopila"></Person>
+*/
 
 export default App;
